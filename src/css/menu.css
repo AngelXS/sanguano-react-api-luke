@@ -1,0 +1,40 @@
+.cbx {
+    background-color: #253655;
+    color: white;
+    font-size: large;
+    border-radius: 5px;
+    padding: 4px;
+}
+.opciones label{
+    margin-right: 10px;
+}
+.btn {
+    background-color: #656565;
+    color: white;
+    font-size: large;
+    border-radius: 5px;
+    padding: 4px;
+}
+.btn:hover {
+    cursor: pointer;
+}
+.carta {
+    padding: 20px;
+    margin-top: 20px;
+    width: 30%;
+    height: auto;
+    color: white;
+}
+.carta span{
+    color: red;
+}
+.carta h2{
+    color: orange;
+    font-size: 30px;
+}
+.carta p{
+    margin-top: 0;
+    text-transform: capitalize;
+    justify-content: center;
+    text-align: justify;
+}

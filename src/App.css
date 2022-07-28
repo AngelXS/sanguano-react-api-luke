@@ -1,7 +1,26 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-
+html, body {
+  width: 100%;
+  height: 100%;
+}
+.App div{
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content:center;
+}
+.App img{
+  margin-top: 20px;
+  width: 500px;
+  height: auto;
+}
+.App {
+  margin-top: 20px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +54,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.opciones {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.opciones img {
+  width: 20px;
 }
