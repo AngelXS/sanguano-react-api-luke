@@ -5,7 +5,8 @@ import '../css/menu.css';
 const ResultadoCard = (props) => {
     const { seleccion, data} = props;
     const [home, setHome] = useState("");
-    function homeWorld(urlhome){
+
+    const homeWorld =  (urlhome) => {
         axios.get(urlhome)
         .then(resp => {
             setHome(resp.data.name);
