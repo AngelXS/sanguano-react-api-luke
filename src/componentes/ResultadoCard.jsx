@@ -2,17 +2,19 @@
 import axios from 'axios';
 import { useState } from 'react';
 import '../css/menu.css';
+
 const ResultadoCard = (props) => {
     const { seleccion, data} = props;
     const [home, setHome] = useState("");
-
-    const homeWorld =  (urlhome) => {
+   
+    const HomeWorld =  (urlhome) => {
         axios.get(urlhome)
-        .then(resp => {
-            setHome(resp.data.name);
-        })
-        .catch(resp => {console.log(resp)});
+            .then(resp => {
+                setHome(resp.data.name);
+            })
+            .catch(resp => {console.log(resp)});
     }
+
     if(seleccion==="" || JSON.stringify(data) === '{}'){
         return (
             <div>
@@ -21,7 +23,7 @@ const ResultadoCard = (props) => {
         );
     }
     else if(seleccion==="People" && JSON.stringify(data) !== '{}' && (data.detail !== 'error')) {
-        homeWorld(data.homeworld);
+        HomeWorld(data.homeworld);
         return(
             <div className="carta" style={{backgroundColor:"#253655",display:"flex",flexDirection:"column"}}>
                 <h1>People</h1>  

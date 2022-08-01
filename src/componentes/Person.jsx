@@ -1,21 +1,27 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from 'axios';
 import ResultadoCard from "./ResultadoCard";
+import { useEffect } from "react";
 
 const Person = () => {
     const { id } = useParams();
     const [people, setPeople] = useState({});
-    useEffect(() => {
+    const [selec, setSelec] = useState("NaN");
+
+    useEffect(()=>{
         axios.get("https://swapi.dev/api/people/"+id+"/")
         .then(resp => {
+            setSelec("People");
             setPeople(resp.data);
         })
-        .catch(resp => {console.log(resp)});
-    }, [id]);
-
+        .catch(resp =>{
+            setSelec("NaN");
+            setPeople({status: "error"});
+        });
+    },[id]);
     return(
-        <ResultadoCard seleccion={"People"} data={people}></ResultadoCard> 
+        <ResultadoCard seleccion={selec} data={people}></ResultadoCard> 
     );
 }
 export default Person;
